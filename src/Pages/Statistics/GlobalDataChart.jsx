@@ -50,10 +50,9 @@ const GlobalDataChart = () => {
             <Box
                 mb={3}
                 data-aos="fade-left"
-                data-aos-delay="50"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-out"
-                data-aos-once="false"
+                data-aos-anchor-placement="bottom-bottom"
+                data-aos-offset="400"
+                data-aos-duration="1500"
             >
                 {lineChart}
             </Box>

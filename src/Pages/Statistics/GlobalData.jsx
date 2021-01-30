@@ -63,7 +63,9 @@ const GlobalData = () => {
                         <Box
                             className={styles.globalCases}
                             data-aos="fade-up"
-                            data-aos-duration="1000"
+                            data-aos-anchor-placement="bottom-bottom"
+                            data-aos-offset="400"
+                            data-aos-duration="1500"
                         >
                             <img className={styles.image} src={Data.img} alt={Data.title} />
                             <Box className={styles.cases} pl={medium ? 2 : 1}>
