@@ -1,4 +1,7 @@
 import './App.css';
+import "aos/dist/aos.css";
+import 'animate.css/animate.css'
+
 import { useEffect, useState } from 'react'
 import { createMuiTheme, responsiveFontSizes, MuiThemeProvider } from '@material-ui/core/styles';
 // import Container from '@material-ui/core/Container'
@@ -20,7 +23,7 @@ import ScreenContext from './context/ScreenContext';
 // pages
 import HeroPage from './Pages/HeroPage'
 import Stats from './Pages/Statistics/Stats'
-import Symptoms from './Pages/Symptoms'
+import Symptoms from './Pages/Symptoms/Symptoms'
 import Doctors from './Pages/Doctors/Doctors'
 import FAQ from './Pages/FAQ/FAQ'
 

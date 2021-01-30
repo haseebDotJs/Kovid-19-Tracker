@@ -1,9 +1,11 @@
 // context
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import DataContext from '../../context/DataContext'
 
 import { Bar } from '@reactchartjs/react-chart.js'
 
+// animate on scroll library
+import AOS from 'aos'
 
 const CountryDataChart = () => {
     const { countryData, country } = useContext(DataContext)
@@ -38,8 +40,15 @@ const CountryDataChart = () => {
             }}
         />
     ) : null
+
+    useEffect(() => {
+        AOS.init({
+            duration: 2000
+        });
+    }, []);
+
     return (
-        <div style={{ width: '100%' }}>
+        <div>
             {barChart}
         </div>
     )

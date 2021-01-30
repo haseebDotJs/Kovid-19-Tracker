@@ -9,12 +9,15 @@ import CountryData from './CountryData'
 import { useContext } from 'react'
 import ScreenContext from '../../context/ScreenContext'
 
-
 const Stats = () => {
     const { medium } = useContext(ScreenContext)
 
+
     return (
-        <Box id="Statistics" style={{ backgroundColor: 'rgb(249,252,255)' }} >
+        <Box
+            id="Statistics"
+            style={{ backgroundColor: 'rgb(249,252,255)' }}
+        >
             <Container maxWidth='lg'>
                 <Paper square >
                     <Box py={8} px={medium ? 2 : 5}>

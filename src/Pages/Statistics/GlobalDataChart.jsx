@@ -3,6 +3,9 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import { Line } from 'react-chartjs-2';
 
+// animate on scroll library
+import AOS from 'aos'
+
 // api
 import { fetchDailyData } from '../../components/Api/Api'
 
@@ -10,6 +13,9 @@ const GlobalDataChart = () => {
 
     const [dailyData, setDailyData] = useState([])
     useEffect(() => {
+        AOS.init({
+            duration: 2000
+        });
         const fetchAPI = async () => {
             setDailyData(await fetchDailyData())
         }
@@ -41,7 +47,14 @@ const GlobalDataChart = () => {
         null
     return (
         <Container maxWidth='md' width='100%'>
-            <Box mb={3}>
+            <Box
+                mb={3}
+                data-aos="fade-left"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-once="false"
+            >
                 {lineChart}
             </Box>
         </Container>
