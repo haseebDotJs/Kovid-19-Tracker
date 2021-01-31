@@ -9,7 +9,8 @@ import deathsImg from '../../images/deaths.png'
 import CountUp from 'react-countup'
 
 // animate on scroll library
-import AOS from 'aos'
+import Fade from 'react-reveal/Fade';
+
 
 // context
 import { useContext, useEffect } from 'react'
@@ -21,11 +22,6 @@ const GlobalData = () => {
     const { medium } = useContext(ScreenContext)
     // console.log('screen is medium ', medium);
 
-    useEffect(() => {
-        AOS.init({
-            duration: 2000
-        });
-    }, []);
 
     const typesOfCases = confirmed && [
         {
@@ -48,40 +44,42 @@ const GlobalData = () => {
         <Box mb={3} >
             <Grid container alignItems="center" spacing={2} >
                 <Grid item xs={12} md={3}>
-                    <Typography
-                        className={fontWeight.medium}
-                        variant="h5"
-                        align={medium ? "center" : "left"}
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                    >
-                        World Wide Statistics:
-                    </Typography>
+                    <Fade bottom big>
+                        <Box>
+                            <Typography
+                                className={fontWeight.medium}
+                                variant="h5"
+                                align={medium ? "center" : "left"}
+                            >
+                                World Wide Statistics:
+                        </Typography>
+                        </Box>
+                    </Fade>
                 </Grid>
                 {!typesOfCases ? <Typography variant='h6'>Loading...</Typography> : typesOfCases.map(Data => (
                     <Grid item xs={12} md={3} key={Data.title}>
-                        <Box
-                            className={styles.globalCases}
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="bottom-bottom"
-                            data-aos-offset="400"
-                            data-aos-duration="1500"
-                        >
-                            <img className={styles.image} src={Data.img} alt={Data.title} />
-                            <Box className={styles.cases} pl={medium ? 2 : 1}>
-                                <Typography className={fontWeight.medium} variant='h5' >
-                                    {<CountUp
-                                        start={0}
-                                        end={Data.cases}
-                                        duration={2}
-                                        separator=',' />
-                                    }
-                                </Typography>
-                                <Typography className={fontWeight.regular} variant='h6' style={{ color: 'rgb(106,106,106)' }}>
-                                    {Data.title}
-                                </Typography>
+                        <Fade bottom big>
+                            <Box
+                                className={styles.globalCases}
+                            >
+                                <img className={styles.image} src={Data.img} alt={Data.title} />
+                                <Box className={styles.cases} pl={medium ? 2 : 1}>
+                                    <Typography className={fontWeight.medium} variant='h5' >
+                                        {
+                                            <CountUp
+                                                start={0}
+                                                end={Data.cases}
+                                                duration={2}
+                                                separator=','
+                                            />
+                                        }
+                                    </Typography>
+                                    <Typography className={fontWeight.regular} variant='h6' style={{ color: 'rgb(106,106,106)' }}>
+                                        {Data.title}
+                                    </Typography>
+                                </Box>
                             </Box>
-                        </Box>
+                        </Fade>
                     </Grid>
                 ))}
             </Grid>

@@ -8,11 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import fontWeight from '../../components/FontWeight/FontWeight.module.css'
-
-// images
-import Doctor1 from '../../images/Doc1.jpg'
-import Doctor2 from '../../images/Doc2.jpg'
-import Doctor3 from '../../images/Doc3.jpg'
+import DoctorsInfo from './DoctorsInfo'
 
 // icon
 import CallIcon from '@material-ui/icons/Call';
@@ -20,31 +16,7 @@ import EmailIcon from '@material-ui/icons/Email';
 
 
 const DoctorCard = () => {
-    const DoctorsInfo = [{
-        name: "Dorothy M. Nickell",
-        specialist: "Throat Specialist",
-        description: "Proce Aran Manu Proucs Rahe Conen Cuve Manu Produ Rahe Cuvaes Mana The Conen Testin Motin Was Procedur",
-        number: "+880 1234 567 890",
-        email: "d.m.nickell@gmail.com",
-        image: Doctor1
-    },
-    {
-        name: "Billie R. Courtney",
-        specialist: "Cardiologist",
-        description: "Proce Aran Manu Proucs Rahe Conen Cuve Manu Produ Rahe Cuvaes Mana The Conen Testin Motin Was Procedur",
-        number: "+880 1234 567 890",
-        email: "b.r.courtney@gmail.com",
-        image: Doctor2
-    },
-    {
-        name: "Courtney A. Smith",
-        specialist: "Rehabilitation Therapy",
-        description: "Proce Aran Manu Proucs Rahe Conen Cuve Manu Produ Rahe Cuvaes Mana The Conen Testin Motin Was Procedur",
-        number: "+880 1234 567 890",
-        email: "c.a.smith@gmail.com",
-        image: Doctor3
-    }
-    ]
+   
     return (
         <Grid container spacing={4}>
             {DoctorsInfo.map(Doctor => {

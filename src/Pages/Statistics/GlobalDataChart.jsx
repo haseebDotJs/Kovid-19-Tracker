@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import Container from '@material-ui/core/Container'
-import Box from '@material-ui/core/Box'
+// import Box from '@material-ui/core/Box'
 import { Line } from 'react-chartjs-2';
 
 // animate on scroll library
 import AOS from 'aos'
+import Slide from 'react-reveal/Slide';
 
 // api
 import { fetchDailyData } from '../../components/Api/Api'
@@ -44,21 +45,15 @@ const GlobalDataChart = () => {
                 }}
             />
         ) :
-        null
+        'Loading...'
     return (
         <Container maxWidth='md' width='100%'>
-            <Box
-                mb={3}
-                data-aos="fade-left"
-                data-aos-anchor-placement="bottom-bottom"
-                data-aos-offset="400"
-                data-aos-duration="1500"
-            >
-                {lineChart}
-            </Box>
+            <Slide right big>
+            {lineChart}   
+            </Slide>
         </Container>
 
     )
 }
 
-export default GlobalDataChart
+export default GlobalDataChart 

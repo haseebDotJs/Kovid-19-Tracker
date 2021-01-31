@@ -20,9 +20,9 @@ import ScreenContext from '../../context/ScreenContext'
 // chart
 import CountryDataChart from './CountryDataChart'
 
-// animate on scroll library
-import AOS from 'aos'
-import "aos/dist/aos.css";
+// animation library
+import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 
 
 const CountryData = () => {
@@ -37,9 +37,6 @@ const CountryData = () => {
     const { medium } = useContext(ScreenContext)
 
     useEffect(() => {
-        AOS.init({
-            duration: 2000
-        });
         const getCountries = async () => {
             setCountries(await fetchCountries())
         }
@@ -83,46 +80,40 @@ const CountryData = () => {
     // const fadeUp = `data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"data-aos-once="false"`
     return (
         <Box mb={3} pt={3}>
-            <Grid container alignItems="center">
-                <Grid item xs={12} sm={12} md={3}>
-                    <Typography
-                        className={fontWeight.medium}
-                        variant="h5"
-                        align={medium ? "center" : "left"}
-                        style={{ marginBottom: "1em" }}
-                        data-aos="fade-up"
-                        data-aos-anchor-placement="bottom-bottom"
-                        data-aos-offset="400"
-                        data-aos-duration="1500"
-                    >
-                        Country Statistics:
+            <Fade bottom big>
+                <Grid container alignItems="center">
+                    <Grid item xs={12} sm={12} md={3}>
+                        <Typography
+                            className={fontWeight.medium}
+                            variant="h5"
+                            align={medium ? "center" : "left"}
+                            style={{ marginBottom: "1em" }}
+                        >
+                            Country Statistics:
                         </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={9}>
+                        <Box>
+                            <form className={classes.formControl}>
+                                <label htmlFor="demo-controlled-open-select-label">Select Country</label>
+                                <select
+                                    id="demo-controlled-open-select-label"
+                                    value={country}
+                                    onChange={(e) => handleCountryChange(e.target.value)}
+                                    className={styles.select}
+                                >
+                                    {
+                                        countries.map(country => {
+                                            return <option value={country} key={country}>{country}</option>
+                                        })
+                                    }
+                                </select>
+                            </form>
+                        </Box>
+                    </Grid>
                 </Grid>
-                <Grid item xs={12} sm={12} md={9}>
-                    <Box
-                        data-aos="fade-up"
-                        data-aos-anchor-placement="bottom-bottom"
-                        data-aos-offset="400"
-                        data-aos-duration="1500"
-                    >
-                        <form className={classes.formControl}>
-                            <label htmlFor="demo-controlled-open-select-label">Select Country</label>
-                            <select
-                                id="demo-controlled-open-select-label"
-                                value={country}
-                                onChange={(e) => handleCountryChange(e.target.value)}
-                                className={styles.select}
-                            >
-                                {
-                                    countries.map(country => {
-                                        return <option value={country} key={country}>{country}</option>
-                                    })
-                                }
-                            </select>
-                        </form>
-                    </Box>
-                </Grid>
-            </Grid>
+            </Fade>
+
             <Box mt={2}>
                 <Container maxWidth='md'>
                     {
@@ -131,52 +122,45 @@ const CountryData = () => {
                         </Box > :
                             <Grid container justify="center" spacing={3}>
                                 <Grid item xs={12} sm={12} md={4} >
-                                    <Box
-                                        data-aos="fade-right"
-                                        data-aos-offset="400"
-                                        data-aos-duration="1500"
-                                        data-aos-anchor-placement="center-bottom"
+                                    <Slide left big>
+                                        <Box>
 
-                                    >
+                                            {
+                                                totalCountryData.map(Data => (
+                                                    <Box
+                                                        mt={3}
+                                                        key={Data.title}
 
-                                        {
-                                            totalCountryData.map(Data => (
-                                                <Box
-                                                    mt={3}
-                                                    key={Data.title}
-
-                                                >
-                                                    <Card className={Data.class}>
-                                                        <CardContent className={styles.card}>
-                                                            <Typography color="textPrimary" gutterBottom>{Data.title}</Typography>
-                                                            <Typography variant="h5" className={fontWeight.medium}>
-                                                                <CountUp
-                                                                    start={0}
-                                                                    end={Data.cases}
-                                                                    duration={2}
-                                                                    separator=","
-                                                                />
-                                                            </Typography>
-                                                            {/* this is converting date update to human readable date  */}
-                                                            <Typography color="textPrimary">{new Date(lastUpdate).toDateString()}</Typography>
-                                                            {/* <Typography variant="subtitle2">Number of total cases of COVID-19 in {country}</Typography> */}
-                                                        </CardContent>
-                                                    </Card>
-                                                </Box>
-                                            ))
-                                        }
-                                    </Box>
+                                                    >
+                                                        <Card className={Data.class}>
+                                                            <CardContent className={styles.card}>
+                                                                <Typography color="textPrimary" gutterBottom>{Data.title}</Typography>
+                                                                <Typography variant="h5" className={fontWeight.medium}>
+                                                                    <CountUp
+                                                                        start={0}
+                                                                        end={Data.cases}
+                                                                        duration={2}
+                                                                        separator=","
+                                                                    />
+                                                                </Typography>
+                                                                {/* this is converting date update to human readable date  */}
+                                                                <Typography color="textPrimary">{new Date(lastUpdate).toDateString()}</Typography>
+                                                                {/* <Typography variant="subtitle2">Number of total cases of COVID-19 in {country}</Typography> */}
+                                                            </CardContent>
+                                                        </Card>
+                                                    </Box>
+                                                ))
+                                            }
+                                        </Box>
+                                    </Slide>
 
                                 </Grid>
                                 <Grid item xs={12} sm={12} md={8}>
-                                    <Box
-                                        data-aos="fade-left"
-                                        data-aos-offset="400"
-                                        data-aos-duration="1500"
-                                        data-aos-anchor-placement="bottom-bottom"
-                                    >
-                                        <CountryDataChart />
-                                    </Box>
+                                    <Slide right big>
+                                        <Box>
+                                            <CountryDataChart />
+                                        </Box>
+                                    </Slide>
                                 </Grid>
                             </Grid>
                     }
