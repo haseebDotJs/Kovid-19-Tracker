@@ -7,6 +7,8 @@ import Logo from '../../images/logo-dark.png'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import MenuItem from './MenuItems'
+import Link from '@material-ui/core/Link';
+
 
 // context
 import { useContext } from 'react'
@@ -32,10 +34,16 @@ export default function Header() {
                 <AppBar style={{ backgroundColor: "white" }}>
                     <Container maxWidth='lg'>
                         <Toolbar style={{ justifyContent: "space-between" }}>
-                            <img src={Logo} alt="logo" className={classes.logo} />
-                            <Box style={{ display: "flex", justifyContent: "space-between" }}>
-                                <MenuItem />
-                            </Box>
+
+                            <Link
+                                href="#hero"
+                                className={classes.anchor}
+                            >
+                                <img src={Logo} alt=" logo" className={classes.logo} />
+                            </Link>
+                        <Box style={{ display: "flex", justifyContent: "space-between" }}>
+                            <MenuItem />
+                        </Box>
                         </Toolbar>
                     </Container>
                 </AppBar>

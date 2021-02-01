@@ -1,6 +1,7 @@
 import './App.css';
 import "aos/dist/aos.css";
 import 'animate.css/animate.css'
+import config from "react-reveal/globals";
 
 import { useEffect, useState } from 'react'
 import { createMuiTheme, responsiveFontSizes, MuiThemeProvider } from '@material-ui/core/styles';
@@ -51,6 +52,7 @@ function App() {
 
   const mobile = useMediaQuery('(max-width: 600px)');
   const medium = useMediaQuery('(max-width: 900px)');
+  config({ ssrFadeout: true });
 
   return (
     <DataContext.Provider value={{ countryData, handleCountryChange, country, globalData }}>
