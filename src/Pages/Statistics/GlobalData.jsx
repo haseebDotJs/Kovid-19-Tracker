@@ -9,7 +9,7 @@ import deathsImg from '../../images/deaths.png'
 import CountUp from 'react-countup'
 
 // animate on scroll library
-import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal';
 
 
 // context
@@ -44,7 +44,7 @@ const GlobalData = () => {
         <Box mb={3} >
             <Grid container alignItems="center" spacing={2} >
                 <Grid item xs={12} md={3}>
-                    <Fade bottom big>
+                    <Reveal effect="fadeInUp" big>
                         <Box>
                             <Typography
                                 className={fontWeight.medium}
@@ -54,11 +54,11 @@ const GlobalData = () => {
                                 World Wide Statistics:
                         </Typography>
                         </Box>
-                    </Fade>
+                    </Reveal>
                 </Grid>
                 {!typesOfCases ? <Typography variant='h6'>Loading...</Typography> : typesOfCases.map(Data => (
                     <Grid item xs={12} md={3} key={Data.title}>
-                        <Fade bottom big>
+                        <Reveal effect="fadeInUp" big>
                             <Box
                                 className={styles.globalCases}
                             >
@@ -79,7 +79,7 @@ const GlobalData = () => {
                                     </Typography>
                                 </Box>
                             </Box>
-                        </Fade>
+                        </Reveal>
                     </Grid>
                 ))}
             </Grid>
