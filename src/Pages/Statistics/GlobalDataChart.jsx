@@ -14,9 +14,6 @@ const GlobalDataChart = () => {
 
     const [dailyData, setDailyData] = useState([])
     useEffect(() => {
-        AOS.init({
-            duration: 2000
-        });
         const fetchAPI = async () => {
             setDailyData(await fetchDailyData())
         }
@@ -49,7 +46,7 @@ const GlobalDataChart = () => {
     return (
         <Container maxWidth='md' width='100%'>
             <Slide right big>
-            {lineChart}   
+                {lineChart}
             </Slide>
         </Container>
 

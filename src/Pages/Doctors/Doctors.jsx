@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import styles from './Doctors.module.css'
 import fontWeight from '../../components/FontWeight/FontWeight.module.css'
 import Container from '@material-ui/core/Container'

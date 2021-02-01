@@ -13,7 +13,7 @@ import Fade from 'react-reveal/Fade';
 
 
 // context
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import DataContext from '../../context/DataContext'
 import ScreenContext from '../../context/ScreenContext'
 

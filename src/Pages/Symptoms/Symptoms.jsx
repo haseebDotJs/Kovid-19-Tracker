@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import styles from './Symptoms.module.css'
 import fontWeight from '../../components/FontWeight/FontWeight.module.css'
 import SymptomData from './SymptomData'

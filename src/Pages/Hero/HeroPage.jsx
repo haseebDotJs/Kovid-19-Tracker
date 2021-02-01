@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import styles from './HeroPage.module.css'
 import fontWeight from '../../components/FontWeight/FontWeight.module.css'
 import HeroImage from '../../images/heroImage.png'
@@ -19,7 +18,7 @@ import ScreenContext from '../../context/ScreenContext'
 const HeroPage = () => {
     const { globalData: { confirmed } } = useContext(DataContext)
     const { medium } = useContext(ScreenContext)
-    
+
     return (
         <Box id="hero" className={styles.container}>
             <Container maxWidth="lg">
