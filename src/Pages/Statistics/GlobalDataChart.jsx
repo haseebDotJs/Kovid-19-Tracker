@@ -4,7 +4,6 @@ import Container from '@material-ui/core/Container'
 import { Line } from 'react-chartjs-2';
 
 // animate on scroll library
-import AOS from 'aos'
 import Slide from 'react-reveal/Slide';
 
 // api
