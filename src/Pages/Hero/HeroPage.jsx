@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box'
 import CountUp from 'react-countup'
 
 // animate on scroll library
-import Reveal from 'react-reveal/Reveal';
+import Fade from 'react-reveal/Fade';
 
 
 // context
@@ -23,7 +23,7 @@ const HeroPage = () => {
         <Box id="hero" className={styles.container}>
             <Container maxWidth="lg">
                 <Box style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: medium ? "60vh" : "90vh" }}>
-                    <Reveal effect="fadeInUp">
+                    <Fade bottom big>
                         <Box>
                             <Typography className={fontWeight.bold} variant='h2' gutterBottom>
                                 KOVID-19 TRACKER
@@ -41,10 +41,12 @@ const HeroPage = () => {
                                 }
                             </Typography>
                         </Box>
+                    </Fade>
+                    <Fade right big>
                         <Box>
                             <img className={styles.image} src={HeroImage} alt="COVID-19" />
-                        </Box> 
-                    </Reveal>
+                        </Box>
+                    </Fade>
                 </Box>
             </Container>
         </Box >
