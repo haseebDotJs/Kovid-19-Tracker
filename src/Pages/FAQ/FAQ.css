@@ -4,11 +4,11 @@
 	background-size: 700px;
 }
 
-.heading, .title {
+.faq__heading, .faq__title {
 	text-align: center;
 }
 
-.title {
+.faq__title {
 	color: rgb(118, 119, 119)
 }
 

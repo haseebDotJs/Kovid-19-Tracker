@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import styles from './FAQ.module.css'
 import "./FAQ.css";
+import { useState } from 'react'
 import QA from './QA'
 import fontWeight from '../../components/FontWeight/FontWeight.module.css'
 import cx from "classnames";
@@ -38,17 +37,17 @@ const FAQ = () => {
         faq.id > 4
     ))
     return (
-        <Box py={8} id="FAQ" className={styles.container}>
+        <Box py={8} id="FAQ" style={{ backgroundColor: 'ghostwhite' }}>
             <Container maxWidth="lg">
                 <Fade bottom>
                     <Box mb={5}>
                         <Box mb={2}>
-                            <Typography variant="h4" className={cx(fontWeight.bold, "heading")}>
+                            <Typography variant="h4" className={cx(fontWeight.bold, "faq__heading")}>
                                 Friquently Asked Questions
                             </Typography>
                         </Box>
                         <Box maxWidth="70%" mx="auto">
-                            <Typography variant="subtitle1" className="title">
+                            <Typography variant="subtitle1" className="faq__title">
                                 Dynamically formulate fully tested catalysts for change via focused methods of empowerment Assertively extend alternative synergy and extensive web services.
                             </Typography>
                         </Box>
@@ -148,7 +147,7 @@ const FAQ = () => {
                     </Box>
                 </Fade>
             </Container>
-        </Box>
+        </Box >
     );
 }
 

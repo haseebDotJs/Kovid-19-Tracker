@@ -6,8 +6,6 @@ import Divider from '@material-ui/core/Divider';
 import GlobalData from './GlobalData'
 import GlobalDataChart from './GlobalDataChart'
 import CountryData from './CountryData'
-import { useContext } from 'react'
-import ScreenContext from '../../context/ScreenContext'
 
 const useStyles = makeStyles((theme) => (
     {
@@ -15,17 +13,17 @@ const useStyles = makeStyles((theme) => (
             backgroundColor: 'rgb(249,252,255)'
         },
         wrapper: {
-            paddingTop: theme.padding(8),
-            paddingBottom: theme.padding(8),
-            paddingLeft: theme.padding(5),
-            paddingRight: theme.padding(5),
+            paddingTop: theme.spacing(8),
+            paddingBottom: theme.spacing(8),
+            paddingLeft: theme.spacing(5),
+            paddingRight: theme.spacing(5),
             [theme.breakpoints.down('md')]: {
-                paddingLeft: theme.padding(2),
-                paddingRight: theme.padding(2)
+                paddingLeft: theme.spacing(2),
+                paddingRight: theme.spacing(2)
             }
 
         }
-    }));
+    })); 
 const Stats = () => {
     const classes = useStyles()
 

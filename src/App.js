@@ -1,7 +1,6 @@
 import './App.css';
 import "aos/dist/aos.css";
 import 'animate.css/animate.css'
-import config from "react-reveal/globals";
 
 import { useEffect, useState } from 'react'
 import { createMuiTheme, responsiveFontSizes, MuiThemeProvider } from '@material-ui/core/styles';
