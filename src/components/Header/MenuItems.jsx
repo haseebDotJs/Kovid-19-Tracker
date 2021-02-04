@@ -14,7 +14,9 @@ const MenuItems = ({ handleDrawerToggle }) => {
         },
         menuItem: {
             color: 'rgb(59,77,109)',
-            outline: 'none'
+            '&:focus': {
+                outline: 'none',
+            }
         },
         anchor: {
             ...theme.anchor,
