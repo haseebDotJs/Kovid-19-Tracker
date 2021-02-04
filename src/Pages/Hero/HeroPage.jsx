@@ -8,7 +8,7 @@ import CountUp from 'react-countup'
 
 // animate on scroll library
 import Fade from 'react-reveal/Fade';
-import useWebAnimations, { bounce } from "@wellyshen/use-web-animations";
+// import useWebAnimations, { bounce } from "@wellyshen/use-web-animations";
 
 
 
