@@ -57,7 +57,7 @@ const HeroPage = () => {
         <Box className={classes.container}>
             <Container maxWidth="lg">
                 <Box className={classes.heroBox}>
-                    <Fade bottom>
+                    <Fade bottom big>
                         <Box >
                             <Typography className={fontWeight.bold} variant='h2' gutterBottom>
                                 KOVID-19 TRACKER
@@ -76,7 +76,7 @@ const HeroPage = () => {
                             </Typography>
                         </Box>
                     </Fade>
-                    <Fade right>
+                    <Fade right big>
                         <Box>
                             <img className={classes.image} src={HeroImage} alt="COVID-19" />
                         </Box>
