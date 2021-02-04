@@ -15,11 +15,6 @@
     color: white;
 }
 
-.anchor:hover {
-    color: rgb(226, 225, 225);
-    text-decoration: underline;
-}
-
 .listStyled {
     list-style-type: none;
 }

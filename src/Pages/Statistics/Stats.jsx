@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import GlobalData from './GlobalData'
 import GlobalDataChart from './GlobalDataChart'
 import CountryData from './CountryData'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import ScreenContext from '../../context/ScreenContext'
 
 const Stats = () => {

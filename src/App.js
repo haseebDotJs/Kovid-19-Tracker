@@ -52,7 +52,6 @@ function App() {
 
   const mobile = useMediaQuery('(max-width: 600px)');
   const medium = useMediaQuery('(max-width: 900px)');
-  config({ ssrFadeout: true });
 
   return (
     <DataContext.Provider value={{ countryData, handleCountryChange, country, globalData }}>

@@ -1,5 +1,4 @@
 import React from "react"
-import styles from './Header.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -7,7 +6,7 @@ import Logo from '../../images/logo-dark.png'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import MenuItem from './MenuItems'
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-scroll';
 
 
 // context
@@ -29,25 +28,27 @@ export default function Header() {
 
 
     return (
-        <div className={styles.container} >
-            {mobile ? <ResponsiveDrawer /> :
+        <Box id="hero" style={{ height: '3em', backgroundColor: 'white' }} >
+            { mobile ? <ResponsiveDrawer /> :
                 <AppBar style={{ backgroundColor: "white" }}>
                     <Container maxWidth='lg'>
                         <Toolbar style={{ justifyContent: "space-between" }}>
 
                             <Link
-                                href="#hero"
+                                to="hero"
+                                smooth={true}
+                                duration={1000}
                                 className={classes.anchor}
                             >
                                 <img src={Logo} alt=" logo" className={classes.logo} />
                             </Link>
-                        <Box style={{ display: "flex", justifyContent: "space-between" }}>
-                            <MenuItem />
-                        </Box>
+                            <Box style={{ display: "flex", justifyContent: "space-between" }}>
+                                <MenuItem />
+                            </Box>
                         </Toolbar>
                     </Container>
                 </AppBar>
             }
-        </div >
+        </Box >
     );
 }

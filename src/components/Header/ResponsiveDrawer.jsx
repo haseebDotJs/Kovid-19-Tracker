@@ -1,14 +1,14 @@
-import styles from './Header.module.css'
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
+import Box from '@material-ui/core/Box';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import Toolbar from '@material-ui/core/Toolbar';
+import Link from '@material-ui/core/Link';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Logo from '../../images/logo-dark.png'
 import { useState } from 'react';
@@ -17,6 +17,10 @@ import MenuItems from './MenuItems'
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
+    container: {
+        height: '3em',
+        backgroundColor: 'white'
+    },
     drawer: {
         [theme.breakpoints.up('sm')]: {
             width: drawerWidth,
@@ -25,6 +29,7 @@ const useStyles = makeStyles(theme => ({
     },
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
+        backgroundColor: "white"
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -56,14 +61,14 @@ function ResponsiveDrawer() {
     const drawer = (
         <div>
             <List>
-                <MenuItems />
+                <MenuItems handleDrawerToggle={handleDrawerToggle} />
             </List>
         </div>
     );
     return (
-        <div className={styles.container}>
+        <Box className={classes.container}>
             <CssBaseline />
-            <AppBar position="fixed" className={classes.appBar} style={{ backgroundColor: "white" }}>
+            <AppBar position="fixed" className={classes.appBar} >
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -74,7 +79,12 @@ function ResponsiveDrawer() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <img src={Logo} alt="logo" className={classes.logo} />
+                    <Link
+                        href="#hero"
+                        className={classes.anchor}
+                    >
+                        <img src={Logo} alt="logo" className={classes.logo} />
+                    </Link>
                 </Toolbar>
             </AppBar>
 
@@ -112,12 +122,8 @@ function ResponsiveDrawer() {
                     </Drawer>
                 </Hidden>
             </nav>
-        </div>
+        </Box>
     );
 }
-ResponsiveDrawer.propTypes = {
-    // Injected by the documentation to work in an iframe.
-    // You won't need it on your project.
-    container: PropTypes.object,
-};
+
 export default ResponsiveDrawer;

@@ -14,7 +14,7 @@ const Symptoms = () => {
     return (
         <Box py={8} id="Symptoms" className={styles.container}>
             <Container maxWidth="lg">
-                <Fade bottom big>
+                <Fade bottom>
                     <Box mb={5}>
                         <Box mb={2}>
                             <Typography variant="h4" className={cx(fontWeight.bold, styles.heading)} align="center">
@@ -33,7 +33,7 @@ const Symptoms = () => {
                         SymptomData.map(symptom => {
                             return (
                                 <Grid item xs={12} sm={6} md={4} key={symptom.heading}>
-                                    <Fade bottom big>
+                                    <Fade bottom>
                                         <Box py={3} mb={1} className={styles.symptomBox}>
                                             <Box mb={2} className={styles.image_cropper}>
                                                 <img className={styles.image} src={symptom.img} alt="covid symptom" />

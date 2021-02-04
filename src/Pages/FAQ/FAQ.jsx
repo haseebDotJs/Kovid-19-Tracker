@@ -40,23 +40,22 @@ const FAQ = () => {
     return (
         <Box py={8} id="FAQ" className={styles.container}>
             <Container maxWidth="lg">
-                <Fade bottom big>
-
+                <Fade bottom>
                     <Box mb={5}>
                         <Box mb={2}>
                             <Typography variant="h4" className={cx(fontWeight.bold, "heading")}>
                                 Friquently Asked Questions
-                        </Typography>
+                            </Typography>
                         </Box>
                         <Box maxWidth="70%" mx="auto">
                             <Typography variant="subtitle1" className="title">
                                 Dynamically formulate fully tested catalysts for change via focused methods of empowerment Assertively extend alternative synergy and extensive web services.
-                        </Typography>
+                            </Typography>
                         </Box>
                     </Box>
                 </Fade>
-                <Fade bottom big>
 
+                <Fade bottom>
                     <Box>
                         <Grid container spacing={0}>
                             <Grid item xs={12} sm={12} md={6}>

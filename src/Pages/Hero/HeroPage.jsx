@@ -1,4 +1,4 @@
-import styles from './HeroPage.module.css'
+import { makeStyles } from '@material-ui/core/styles';
 import fontWeight from '../../components/FontWeight/FontWeight.module.css'
 import HeroImage from '../../images/heroImage.png'
 import Container from '@material-ui/core/Container'
@@ -8,23 +8,57 @@ import CountUp from 'react-countup'
 
 // animate on scroll library
 import Fade from 'react-reveal/Fade';
+import useWebAnimations, { bounce } from "@wellyshen/use-web-animations";
+
 
 
 // context
 import { useContext } from 'react'
 import DataContext from '../../context/DataContext'
-import ScreenContext from '../../context/ScreenContext'
 
+const useStyles = makeStyles((theme) => (
+    {
+        heroBox: {
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            minHeight: "90vh",
+            [theme.breakpoints.down('md')]: {
+                minHeight: "60vh"
+            }
+
+        },
+        container: {
+            padding: '2em 0 0 0',
+            marginTop: '0px',
+            textAlign: 'center',
+            background: 'rgb(223, 222, 245)'
+        },
+
+        image: {
+            maxWidth: '100%',
+            display: 'flex',
+            margin: 'auto'
+        }
+    }));
 const HeroPage = () => {
     const { globalData: { confirmed } } = useContext(DataContext)
-    const { medium } = useContext(ScreenContext)
+    // const { keyframes, timing } = bounce;
+    // const { ref } = useWebAnimations({
+    //     keyframes,
+    //     timing: {
+    //         ...timing,
+    //         duration: timing.duration * 0.75, // Speed up the animation
+    //     },
+    // });
+    const classes = useStyles()
 
     return (
-        <Box id="hero" className={styles.container}>
+        <Box className={classes.container}>
             <Container maxWidth="lg">
-                <Box style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: medium ? "60vh" : "90vh" }}>
-                    <Fade bottom big>
-                        <Box>
+                <Box className={classes.heroBox}>
+                    <Fade bottom>
+                        <Box >
                             <Typography className={fontWeight.bold} variant='h2' gutterBottom>
                                 KOVID-19 TRACKER
                             </Typography>
@@ -42,9 +76,9 @@ const HeroPage = () => {
                             </Typography>
                         </Box>
                     </Fade>
-                    <Fade right big>
+                    <Fade right>
                         <Box>
-                            <img className={styles.image} src={HeroImage} alt="COVID-19" />
+                            <img className={classes.image} src={HeroImage} alt="COVID-19" />
                         </Box>
                     </Fade>
                 </Box>

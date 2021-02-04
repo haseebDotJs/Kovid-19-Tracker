@@ -19,7 +19,7 @@ const GlobalDataChart = () => {
         fetchAPI()
     }, [])
 
-    const lineChart = dailyData.length ?
+    const lineChart = dailyData && dailyData.length ?
         (
             <Line
                 data={{
@@ -44,7 +44,7 @@ const GlobalDataChart = () => {
         'Loading...'
     return (
         <Container maxWidth='md' width='100%'>
-            <Slide right big>
+            <Slide right>
                 {lineChart}
             </Slide>
         </Container>
