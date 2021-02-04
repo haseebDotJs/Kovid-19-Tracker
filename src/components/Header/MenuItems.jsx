@@ -12,14 +12,12 @@ const MenuItems = ({ handleDrawerToggle }) => {
         title: {
             marginRight: '16px',
         },
-        // menuItem: {
-        //     color: 'rgb(59,77,109)',
-        //     outline: 'none'
-        // },
+        menuItem: {
+            color: 'rgb(59,77,109)',
+            outline: 'none'
+        },
         anchor: {
             ...theme.anchor,
-            color: 'rgb(59,77,109)',
-            outline: 'none',
             textDecoration: 'none',
 
         }
