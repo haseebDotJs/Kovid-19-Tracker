@@ -50,7 +50,6 @@ const Symptoms = () => {
                             )
                         })
                     }
-
                 </Grid>
             </Container>
         </Box>

@@ -21,11 +21,11 @@ import DataContext from './context/DataContext'
 import ScreenContext from './context/ScreenContext';
 
 // pages
-import HeroPage from './Pages/Hero/HeroPage'
-import Stats from './Pages/Statistics/Stats'
-import Symptoms from './Pages/Symptoms/Symptoms'
-import Doctors from './Pages/Doctors/Doctors'
-import FAQ from './Pages/FAQ/FAQ'
+import HeroPage from './components/Hero/HeroPage'
+import Stats from './components/Statistics/Stats'
+import Symptoms from './components/Symptoms/Symptoms'
+import Doctors from './components/Doctors/Doctors'
+import FAQ from './components/FAQ/FAQ'
 
 let theme = createMuiTheme()
 theme = responsiveFontSizes(theme)

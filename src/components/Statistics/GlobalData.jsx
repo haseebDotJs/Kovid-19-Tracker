@@ -36,8 +36,6 @@ const GlobalData = () => {
                     </Fade>
                 </Grid>
                 <TypesOfCases />
-
-
             </Grid>
         </Box>
     )
