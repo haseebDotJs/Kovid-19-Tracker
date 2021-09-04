@@ -16,6 +16,7 @@
     "aos": "^2.3.4",
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
+    "grep": "^0.1.0",
     "history": "5.0.0",
     "material-ui-image": "^3.3.1",
     "mdbreact": "^5.0.1",
