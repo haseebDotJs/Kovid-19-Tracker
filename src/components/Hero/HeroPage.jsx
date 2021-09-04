@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        minHeight: "90vh",
+        minHeight: "90vh", 
         [theme.breakpoints.down('md')]: {
             minHeight: "60vh"
         }
