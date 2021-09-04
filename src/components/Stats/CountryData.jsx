@@ -8,9 +8,11 @@ import CountUp from 'react-countup'
 import fontWeight from '../../components/FontWeight/FontWeight.module.css'
 import { Card, CardContent } from '@material-ui/core'
 import cx from "classnames"
+// import handleViewport from 'react-in-viewport';
+
 
 // country list api
-import { fetchCountries } from '../../components/Api/Api'
+import { fetchCountries } from '../Api/Api'
 
 // context
 import { useContext } from 'react'
@@ -22,7 +24,7 @@ import CountryDataChart from './CountryDataChart'
 // animation library
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
-import useWebAnimations, { rubberBand } from "@wellyshen/use-web-animations";
+import useWebAnimations, { rubberBand } from "@wellyshen/use-web-animations"; 
 
 
 const useStyles = makeStyles((theme) => ({

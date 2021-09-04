@@ -7,7 +7,7 @@ import { Line } from 'react-chartjs-2';
 import Slide from 'react-reveal/Slide';
 
 // api
-import { fetchDailyData } from '../../components/Api/Api'
+import { fetchDailyData } from '../Api/Api'
 
 const GlobalDataChart = () => {
 

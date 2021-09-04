@@ -7,6 +7,7 @@ import GlobalData from './GlobalData'
 import GlobalDataChart from './GlobalDataChart'
 import CountryData from './CountryData'
 
+
 const useStyles = makeStyles((theme) => (
     {
         stats: {

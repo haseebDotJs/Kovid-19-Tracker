@@ -1,4 +1,3 @@
-import "./HeroPage.css"
 import { makeStyles } from '@material-ui/core/styles';
 import fontWeight from '../../components/FontWeight/FontWeight.module.css'
 import HeroImage from '../../images/heroImage.png'
@@ -57,7 +56,7 @@ const HeroPage = () => {
         <Box className={classes.container} >
             <Container maxWidth="lg" >
                 <Box className={classes.heroBox} >
-                    <Box className="animated-titles" >
+                    <Box className="move-in-right" >
                         <Typography className={fontWeight.bold}
                             variant='h2'
                             gutterBottom >
@@ -85,7 +84,7 @@ const HeroPage = () => {
                             }
                         </Typography>
                     </Box>
-                    <Box className="animated-image">
+                    <Box className="move-in-left">
                         <img
                             className={classes.image}
                             src={HeroImage}

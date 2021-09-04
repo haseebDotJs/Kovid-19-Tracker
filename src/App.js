@@ -22,7 +22,7 @@ import ScreenContext from './context/ScreenContext';
 
 // pages
 import HeroPage from './components/Hero/HeroPage'
-import Stats from './components/Statistics/Stats'
+import Stats from './components/Stats/Stats'
 import Symptoms from './components/Symptoms/Symptoms'
 import Doctors from './components/Doctors/Doctors'
 import FAQ from './components/FAQ/FAQ'
