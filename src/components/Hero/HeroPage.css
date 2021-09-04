@@ -1,5 +1,5 @@
 .animated-titles {
-    animation: moveInRight .5s ease-out;
+    animation: moveInRight .75s ease-out;
 }
 
 @keyframes moveInRight {
@@ -14,13 +14,13 @@
 }
 
 .animated-image {
-    animation: moveInBottom .5s ease-out
+    animation: moveInLeft .75s ease-out
 }
 
-@keyframes moveInBottom {
+@keyframes moveInLeft {
     0% {
         opacity: 0; 
-        transform: translateY(100px);
+        transform: translateX(-100px);
     }
     100% {
         opacity: 1;
